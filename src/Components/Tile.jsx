@@ -42,12 +42,13 @@ class Tile extends Component {
         let toIndex = this.checkValidMove()
        // console.log( toIndex)
         //console.log(this.props.index)
+        console.log("(", this.props.index, toIndex, ")")
         if(toIndex!== -1)
         {
             var b = a[this.props.index];
             a[this.props.index] = a[toIndex];
             a[toIndex] = b;
-            [a[this.props.index], a[toIndex]] = [a[toIndex], a[this.props.index]]
+           // [a[this.props.index], a[toIndex]] = [a[toIndex], a[this.props.index]]
         }
         console.log("a = ", a);
       this.props.setChanged(a)
