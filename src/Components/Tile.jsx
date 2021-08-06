@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Utils from '../Utils';
-import './Tilestyle.css';
+import '../stylingFiles/Tilestyle.css';
 
 
 
@@ -15,13 +15,8 @@ class Tile extends Component {
     }
 
     render() {
-        console.log(this.props.index);
-        // let showInfo = true
-        // if (this.props.number === 16) {
-        //     Utils.emptyTile = this.props.index
-        //     showInfo = false
-
-        // }
+        //console.log(this.props.index);
+       
         return (
             <span style={{ display: "block" }} onClick={this.handleChange} className="Tile">
                 {this.props.number!==16 && this.props.number}
@@ -32,10 +27,9 @@ class Tile extends Component {
     checkValidMove(){
         let neighbours = Utils.getNeighbours(this.props.index)
         let a = this.props.grid
-
         for (let i =0 ;i<4;i++)
         {
-            if(neighbours[i]!=-1 && a[neighbours[i]]==16) return neighbours[i]
+            if(neighbours[i]!==-1 && a[neighbours[i]]===16) return neighbours[i]
         }
         return -1
     }
@@ -46,8 +40,8 @@ class Tile extends Component {
         console.log("Neighbours", neighbours)
         let a = this.props.grid
         let toIndex = this.checkValidMove()
-        console.log( toIndex)
-        console.log(this.props.index)
+       // console.log( toIndex)
+        //console.log(this.props.index)
         if(toIndex!== -1)
         {
             var b = a[this.props.index];

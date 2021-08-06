@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Utils from '../Utils';
-import './Gridstyle.css'
 import Tile from './Tile'
+import '../stylingFiles/Gridstyle.css'
 
 
 

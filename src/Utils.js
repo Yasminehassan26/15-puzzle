@@ -9,17 +9,20 @@ class Utils {
   .map(({ value }) => value)
         return shuffled
     }
-    isValidMove(index,negihbours)
-    {
-     
+   
+    getNeighbours(index){
+      //  console.log("Index ", index)
+        let i = Math.floor(index/4)
+        let j= index%4
+       // console.log("(", i, j, ")")
+        // console.log(j)
+        let neighbours =   [-1,-1,-1,-1]
+        if(j-1 >=0) {neighbours[0]= index-1}
+        if(j+1 <=3) {neighbours[1]= index+1}
+        if(i-1 >=0) {neighbours[2]= index-4}
+        if(i+1 <=3) {neighbours[3]= index+4}
+        return neighbours
+       
     }
-    checkBoundries(index){
-      
-
-    }
-    getNeighbours(index)
-    {
-        return {'L' : index-1,'R' :index+1 , 'U' : index-4 ,'D' :index+4}
-    }
+   
 }export default new Utils();
-
