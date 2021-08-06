@@ -2,6 +2,8 @@ class Utils {
   const;
   emptyTile = 15;
   maxValue = 16;
+  sorteTtiles= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+
   shuffle(arr) {
     let shuffled = arr
       .map((value) => ({ value, sort: Math.random() }))
@@ -9,7 +11,15 @@ class Utils {
       .map(({ value }) => value);
     return shuffled;
   }
-
+   isSorted(grid){
+    for (var i = 0; i <16 ; i++) {
+    if (grid[i] !== this.sorteTtiles[i]) { 
+        return false;   
+    }           
+}       
+return true;
+}
+   
   getNeighbours(index) {
     let i = Math.floor(index / 4);
     let j = index % 4;

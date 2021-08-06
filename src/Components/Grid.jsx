@@ -8,6 +8,7 @@ class Grid extends Component {
     super(props);
     this.state = {
       tiles: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+
     };
 
     this.setChanged = this.setChanged.bind(this);
@@ -38,13 +39,11 @@ class Grid extends Component {
                 {" "}
                 Shuffle{" "}
               </button>
-              <button className="buttons" onClick={() => this.refresh()}>
-                {" "}
-                order{" "}
-              </button>
+              
             </div>
             <div></div>
             <div></div>
+
             <div></div>
 
             {this.state.tiles.map((tile, i) => (

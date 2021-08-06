@@ -11,9 +11,21 @@
   font-weight: bolder;
   background-image: linear-gradient(to right, #540374, #945fd1);
 }
-.Tile>specificTile {
-  
-  background-image: transaprent;
+.specificTile {
+  background-color: transaprent;
+}
+.correctTile {
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  text-shadow: 10px;
+  font-size: 40px;
+  outline: transparent;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #83a81c, #ffffff);
 }
 .Tile:hover {
   background-color: #5700ba;
