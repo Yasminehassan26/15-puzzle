@@ -1,22 +1,26 @@
-.Tile{
-    height: 80px;
-    width: 80px;
-    text-align: center;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-    text-shadow: 10px;
-    font-size: 40px;
-    outline: transparent; 
-    font-weight: bolder;
-    background-image: linear-gradient(to right,#540374,#945fd1); 
+.Tile {
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  text-shadow: 10px;
+  font-size: 40px;
+  outline: transparent;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, #540374, #945fd1);
+}
+.Tile>specificTile {
+  
+  background-image: transaprent;
 }
 .Tile:hover {
-    background-color: #5700ba;
-    
-    color: white;
-  }
-  .Tile:active {
-    box-shadow: 0 5px rgb(255, 255, 255);
-    transform: translateY(4px);
-  }
+  background-color: #5700ba;
+
+  color: white;
+}
+.Tile:active {
+  box-shadow: 0 5px rgb(255, 255, 255);
+  transform: translateY(4px);
+}
