@@ -1,4 +1,5 @@
 class Utils {
+  
   const;
   emptyTile = 15;
   maxValue = 16;
