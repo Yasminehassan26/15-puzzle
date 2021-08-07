@@ -1,6 +1,7 @@
 .Grid {
   border: 2px solid white;
   display: grid;
+  grid-area: gridd;
   align-items: center;
   grid-template-columns: repeat(4, 80px);
   grid-template-rows: repeat(4, 80px);
@@ -11,20 +12,12 @@
   min-width: 500px;
   row-gap: 5px;
   column-gap: 5px;
-  grid-template-areas:
-    "button1 button1 button1 "
-    "game  game game "
-    "game  game game "
-    "header header header ";
 }
 .containGrid {
-  grid-template-areas:
-    "header  "
-    "game   "
-    "game   "
-    "header ";
+  grid-area: containG;
+  grid-template-areas:    
+    "gridd";
 }
-
 .grid > item :hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
@@ -32,16 +25,12 @@
   background-image: linear-gradient(to right, #00aaff, #00ff6c);
   justify-content: center;
   align-items: center;
-  grid-area: contain;
+  grid-area: container;
   display: grid;
-  grid-template-areas:
-    "header header header "
-    "menu  game space "
-    "menu game space"
-    "menu game space ";
   grid-gap: 10px;
+  grid-template-areas:
+      "help containG";
 }
-
 .tile {
   width: 95px;
   height: 95px;
@@ -52,8 +41,9 @@
   background-size: 400px 400px;
 }
 .buttons {
+  grid-column: 1/4;
   height: 80px;
-  width: 100px;
+  width: 336px;
   text-align: center;
   align-items: center;
   padding: 10px;
@@ -71,12 +61,4 @@
 .buttons:active {
   box-shadow: 0 5px rgb(255, 255, 255);
   transform: translateY(4px);
-}
-.buttonsPlace {
-  display: grid;
-  margin: 0 auto;
-  grid-template-areas:
-    "b1  b2 b3 "
-    "b1 b2 b3";
-  grid-gap: 60px;
 }

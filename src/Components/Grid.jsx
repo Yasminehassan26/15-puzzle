@@ -8,7 +8,6 @@ class Grid extends Component {
     super(props);
     this.state = {
       tiles: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-
     };
 
     this.setChanged = this.setChanged.bind(this);
@@ -31,18 +30,13 @@ class Grid extends Component {
       <div className="container">
         <div className=" containGrid">
           <div>
-            <h1>Welcome to our game</h1>
+            <h1>--Welcome to our game !--</h1>
           </div>
           <div className="Grid">
-            <div className="buttonsPlace">
-              <button className="buttons" onClick={() => this.refresh()}>
-                {" "}
-                Shuffle{" "}
-              </button>
-              
-            </div>
-            <div></div>
-            <div></div>
+            <button className="buttons" onClick={() => this.refresh()}>
+              {" "}
+              Shuffle{" "}
+            </button>
 
             <div></div>
 
