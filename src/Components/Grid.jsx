@@ -41,19 +41,28 @@ class Grid extends Component {
     this.setState({ toIndex: to });
   }
 
+  setWin(){
+    if(Utils.isSorted(this.state.tiles)){
+      return "..YOU WON!..";
+    }else{
+      return "..Welcome to our game !..";
+    }
+  }
+
   render() {
     return (
       <div className="container">
         <div className=" containGrid">
           <div>
-            <h1>..Welcome to our game !..</h1>
+            <h1>{this.setWin()}</h1>
           </div>
           <div className="Grid">
+            
             <button className="buttons" onClick={() => this.refresh()}>
               {" "}
               Shuffle{" "}
             </button>
-            <button className="buttons" onClick={() => this.undo()}>
+            <button className="buttons" onClick={() => this.undo()} disabled={Utils.isSorted(this.state.tiles)}>
               {" "}
               Undo{" "}
             </button>

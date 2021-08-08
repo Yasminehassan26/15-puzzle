@@ -44,6 +44,9 @@ class Tile extends Component {
     }
   }
   checkValidMove() {
+    if(Utils.isSorted(this.props.grid)){
+      return -1;
+    }
     let neighbours = Utils.getNeighbours(this.props.index);
     let a = this.props.grid;
     for (let i = 0; i < 4; i++) {
