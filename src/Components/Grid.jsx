@@ -9,8 +9,8 @@ class Grid extends Component {
     this.state = {
       tiles: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
       prevTiles: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-      toIndex:0,
-      fromIndex:0,
+      toIndex: 0,
+      fromIndex: 0,
     };
 
     this.setChanged = this.setChanged.bind(this);
@@ -24,21 +24,22 @@ class Grid extends Component {
     this.setState({ tiles: Utils.shuffle(this.state.tiles) });
     this.setState({ fromIndex: 0 });
     this.setState({ toIndex: 0 });
-
-
   }
-  undo(){
-    this.setState({ tiles:  Utils.undo(this.state.tiles,this.state.fromIndex,this.state.toIndex) });
+  undo() {
+    this.setState({
+      tiles: Utils.undo(
+        this.state.tiles,
+        this.state.fromIndex,
+        this.state.toIndex
+      ),
+    });
   }
 
-  setChanged(current,from,to) {
+  setChanged(current, from, to) {
     this.setState({ tiles: current });
-    this.setState({ fromIndex : from});
-    this.setState({ toIndex : to});
-
-
+    this.setState({ fromIndex: from });
+    this.setState({ toIndex: to });
   }
- 
 
   render() {
     return (

@@ -1,9 +1,8 @@
 class Utils {
-  
   const;
   emptyTile = 15;
   maxValue = 16;
-  sorteTtiles= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+  sorteTtiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   shuffle(arr) {
     let shuffled = arr
@@ -13,19 +12,18 @@ class Utils {
     return shuffled;
   }
 
-   isSorted(grid){
-    for (var i = 0; i <16 ; i++) {
-    if (grid[i] !== this.sorteTtiles[i]) { 
-        return false;   
-    }           
-}       
-return true;
-}
- undo(a,from ,to){
-  [a[from], a[to]] = [a[to], a[from]];
-     return a;
-
- }
+  isSorted(grid) {
+    for (var i = 0; i < 16; i++) {
+      if (grid[i] !== this.sorteTtiles[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  undo(a, from, to) {
+    [a[from], a[to]] = [a[to], a[from]];
+    return a;
+  }
   getNeighbours(index) {
     let i = Math.floor(index / 4);
     let j = index % 4;
