@@ -12,6 +12,7 @@ class Utils {
       .map(({ value }) => value);
     return shuffled;
   }
+
    isSorted(grid){
     for (var i = 0; i <16 ; i++) {
     if (grid[i] !== this.sorteTtiles[i]) { 
@@ -20,7 +21,11 @@ class Utils {
 }       
 return true;
 }
-   
+ undo(a,from ,to){
+  [a[from], a[to]] = [a[to], a[from]];
+     return a;
+
+ }
   getNeighbours(index) {
     let i = Math.floor(index / 4);
     let j = index % 4;

@@ -53,12 +53,20 @@ class Tile extends Component {
     return -1;
   }
   handleChange() {
-    let a = this.props.grid;
+   
     let toIndex = this.checkValidMove();
     if (toIndex !== -1) {
+      let a = this.props.grid;
+      let from=this.props.fromInd;
+      let to=this.props.toInd;
+      from=toIndex;
+      to=this.props.index;
       [a[this.props.index], a[toIndex]] = [a[toIndex], a[this.props.index]];
+      this.props.setChanged(a,from,to);
+      console.log(a)
     }
-    this.props.setChanged(a);
+    
+
     let bol=Utils.isSorted(this.props.grid)
     console.log(bol)
   }
