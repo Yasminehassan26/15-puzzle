@@ -24,6 +24,8 @@ class Utils {
     [a[from], a[to]] = [a[to], a[from]];
     return a;
   }
+ 
+   
   getNeighbours(index) {
     let i = Math.floor(index / 4);
     let j = index % 4;
