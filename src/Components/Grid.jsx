@@ -4,6 +4,7 @@ import Tile from "./Tile";
 import "../stylingFiles/Gridstyle.css";
 
 class Grid extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -11,9 +12,12 @@ class Grid extends Component {
       prevTiles: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
       toIndex: 0,
       fromIndex: 0,
+      stackIn : [],
+      stackOut :[]
     };
 
     this.setChanged = this.setChanged.bind(this);
+    this.setUndoChanged = this.setUndoChanged.bind(this);
   }
 
   componentDidMount() {
@@ -29,16 +33,26 @@ class Grid extends Component {
     this.setState({
       tiles: Utils.undo(
         this.state.tiles,
-        this.state.fromIndex,
-        this.state.toIndex
+        this.state.stackIn,
+        this.state.stackOut
       ),
     });
+    this.setUndoChanged();
   }
-
+  setUndoChanged() {
+   /* this.state.stackIn.pop();
+    this.state.stackIn.pop();*/
+    this.setState({ stackIn: this.state.stackIn });
+    this.setState({ stackOut: this.state.stackOut });
+  }
   setChanged(current, from, to) {
     this.setState({ tiles: current });
-    this.setState({ fromIndex: from });
-    this.setState({ toIndex: to });
+    this.state.stackIn.push(from);
+    this.state.stackOut.push(to);
+    this.setState({ stackIn: this.state.stackIn });
+    this.setState({ stackOut: this.state.stackOut });
+
+
   }
 
   setWin(){

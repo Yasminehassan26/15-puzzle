@@ -8,9 +8,12 @@ class Tile extends Component {
     this.state = {
       number: props.number,
       neighbours: [-1, -1, -1, -1],
+      
     };
     this.handleChange = this.handleChange.bind(this);
   }
+ 
+
 
   render() {
     if (this.props.number === 16) {
@@ -64,6 +67,7 @@ class Tile extends Component {
       to = this.props.index;
       [a[this.props.index], a[toIndex]] = [a[toIndex], a[this.props.index]];
       this.props.setChanged(a, from, to);
+      
       console.log(a);
     }
 

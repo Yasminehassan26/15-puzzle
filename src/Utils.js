@@ -3,6 +3,7 @@ class Utils {
   emptyTile = 15;
   maxValue = 16;
   sorteTtiles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+  
 
   shuffle(arr) {
     let shuffled = arr
@@ -21,10 +22,15 @@ class Utils {
     return true;
   }
   undo(a, from, to) {
-    [a[from], a[to]] = [a[to], a[from]];
+    var x = from.pop();
+    var z = to.pop();
+    [a[x] , a[z]] = [a[z], a[x]] ; 
+    console.log(x)
+    console.log(z)
+
     return a;
   }
- n
+ 
    
   getNeighbours(index) {
     let i = Math.floor(index / 4);
